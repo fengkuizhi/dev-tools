@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox->placeholder
+  namespace: default
+spec:
+  containers:
+    - name: busybox
+      image: registry.api.weibo.com/kube/busybox
+      command:
+        - sleep
+        - "86400"
+      imagePullPolicy: IfNotPresent
+      resources:
+        requests:
+          cpu: 0
+        limits:
+          cpu: 0.1
